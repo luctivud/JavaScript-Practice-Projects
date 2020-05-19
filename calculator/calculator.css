@@ -1,0 +1,45 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+.container{
+  position: relative;
+  margin:20px;
+  width:260px;
+  height: 420px;
+  display: grid;
+  grid-template-columns: 60px 60px 60px 60px;
+  grid-template-rows: 90px 60px 60px 60px 60px 60px;
+  grid-gap:5px;
+  background:rgb(28, 1, 80);
+
+}
+#input{
+  margin-left: 5px;
+  margin-top: 5px;
+  grid-column: 1/5;
+  font-size:20px;
+  padding:10px;
+  letter-spacing:4px;
+  text-align:right;
+  color:white;
+  background:  rgb(28, 1, 80);
+
+}
+.div{
+  margin-left:5px;
+  display:flex;
+  background:rgb(139, 141, 141);
+  justify-content: center;
+  align-items: center;
+}
+.div:hover{
+  margin:2px;
+}
+.div:active{
+    box-shadow: inset  0px 0px 5px rgb(24, 24, 22);
+
+}
+.num{
+  background: rgb(185, 184, 184);
+}

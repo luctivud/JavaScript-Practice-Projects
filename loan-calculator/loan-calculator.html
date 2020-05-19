@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- stylesheets with bootstrap 4 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+<style>
+  #results, #loading{
+    display:none;
+  }
+
+</style>
+<title>loan-calculator</title>
+</head>
+<body class="bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="card-columns col-md-6 mx-auto ">
+        <div class="card card-body mt-5 text-center">
+          <h2 class="heading pb-3">Loan Calculator</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card-columns col-md-6 mx-auto">
+         <form id="loan-form">
+           <div class="form-group">
+             <div class="input-group">
+                 <div class="input-group-prepend">
+                   <span class="input-group-text" id="my-addon">$</span>
+                 </div>
+               <input type="number" name="amount" class="form-control" id="amount" placeholder="Amount">
+             </div>
+           </div>
+           <div class="form-group">
+             <div class="input-group">
+                 <div class="input-group-prepend">
+                   <span class="input-group-text" id="my-addon">%</span>
+                 </div>
+               <input type="number" name="interest" class="form-control" id="interest" placeholder="Interest">
+             </div>
+           </div>
+           <div class="form-group">
+              <input type="number" name="years" class="form-control" id="years" placeholder="Years">
+           </div>
+           <div class="form-group">
+              <div value="calculate" id="calculate" class="btn btn-success btn-block">Calculate</div>          
+            </div>
+         </form>
+         <!-- loading -->
+         <div id="loading" class="row">
+           <img width="100%" height="300px" src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=790b76115d0c96415830743836aeab0b&rid=giphy.gif" alt="loading">
+         </div>
+         <!-- results displayed here -->
+         <div id="results" class="row">
+           <h5 class="text-center" style="color:rgb(226, 224, 221)">Results</h5>
+           <div class="form-group">
+             <div class="input-group">
+                 <div class="input-group-prepend">
+                   <span class="input-group-text">Monthly Payment</span>
+                 </div>
+               <input type="number" class="form-control" id="monthly-payment" disabled>
+             </div>
+           </div>
+           <div class="form-group">
+             <div class="input-group">
+                 <div class="input-group-prepend">
+                   <span class="input-group-text">Total Payment</span>
+                 </div>
+               <input type="number" class="form-control" id="total-payment" disabled>
+             </div>
+           </div>
+           <div class="form-group">
+             <div class="input-group">
+                 <div class="input-group-prepend">
+                   <span class="input-group-text">Total Interest</span>
+                 </div>
+               <input type="number" class="form-control" id="total-interest" disabled>
+             </div>
+           </div>
+
+         </div>
+      </div>
+    </div>
+  </div>
+
+<!-- scripts at the end of the page -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="loan-calculator.js"></script>
+</body>
+</html>

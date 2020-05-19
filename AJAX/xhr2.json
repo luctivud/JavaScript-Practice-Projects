@@ -1,0 +1,20 @@
+[
+  {
+    "name" : "Jayson",
+    "id" : 123,
+    "company" : "yay-bakers",
+    "phone" : "222-333-4444"
+  },
+  {
+    "name" : "Jayasun",
+    "id" : 124,
+    "company" : "yay-lakers",
+    "phone" : "222-333-4444"
+  },
+  {
+    "name" : "Jaisun",
+    "id" : 125,
+    "company" : "yay-hakers",
+    "phone" : "222-333-4444"
+  }
+]

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Async Await</title>
+</head>
+<body>
+  
+
+
+
+<script>
+let posts = [
+  { title:'Post One', body:'hdhidi'},
+  { title:'Post two', body:'uddhid'}
+]
+
+function createPost(post){
+  return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      (posts.push(post))
+      resolve();
+    },2000)
+    
+  })
+  
+}
+
+function displayPost(){
+  setTimeout(()=>{
+    document.body.innerHTML = ``
+    posts.forEach(post => {
+    document.body.innerHTML += `<li>${post.title}</li>`
+  })
+  },1000)
+}
+displayPost()
+
+createPost({ title: 'post three', body:'udihihsi'}).then(displayPost)
+
+
+// let data = fetch('https://jsonplaceholder.typicode.com/users').then((res)=>res.json).then(heh => heh)
+// console.log(data)
+
+
+</script>
+</body>
+</html>

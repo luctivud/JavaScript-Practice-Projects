@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>trying out prototype</title>
+</head>
+<body>
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   class Person{
+     constructor(firstName,lastName){
+       this.firstName = firstName;
+       this.lastName = lastName;
+     }
+     greeting(){
+       return `hello there ${this.firstName} ${this.lastName}`;
+     }
+     static marry(a,b){
+       a.lastName = b.lastName;
+     }
+   }
+  
+  mary = new Person('mary','jane');
+  samoa = new Person('samoa','joe');
+  Person.marry(mary,samoa);
+  console.log(mary.greeting());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

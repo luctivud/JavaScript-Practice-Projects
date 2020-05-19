@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>trying json objects and map</title>
+</head>
+<body>
+  <h1> Trying </h1>
+
+<script>
+ let animals = new Array();
+ animals = [
+  {
+    'species':'cat',
+    'age':'10',
+    'name':'baloric',
+    'favourite food':'pizza',
+
+  },
+  {
+    'species' :'dog',
+    'age':'05',
+    'name':'bosco',
+    'favourite food':'pedigree'
+  },
+  {
+    'species':'alien',
+    'age':'18',
+    'name':'popo',
+    'favourite food':'brain',
+  }
+];
+// console.log(animals.map(animal=> animal.name).join(' '));
+
+// animals.forEach(ani=>{
+//   console.log(ani.name)
+//   })
+
+let animalArray = JSON.stringify(animals);
+
+// animals.forEach(animal=>console.log(`${animal.name} (${animal.species}) ${animal.age}`))
+
+animals.map(animal=>display(`${animal.name}`,`${animal.species}`, `${animal.age}`))
+
+// animals.map(display).join();
+
+function display(name,species,age){
+  let div = document.createElement('div');
+  div.innerHTML = name + '('+species+')'+age;
+  document.body.appendChild(div);
+}
+</script>
+</body>
+</html>

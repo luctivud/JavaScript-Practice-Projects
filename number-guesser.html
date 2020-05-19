@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+<!-- -------------------------style-------------------------- -->
+<style>
+</style>
+<title>number-guesser</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Number Guessing Game</h1>
+    <div id="game">
+      <p>Guess a number between <span class="min-num"></span> and <span class="max-num"></span></p>
+      <input type="number" id="guess-input" placeholder="Enter your guess.."/>
+      <input type="submit" value="submit" id="guess-btn"/>
+    </div>
+    <p class="message"></p>
+  </div>
+
+
+<!-- ----------------------my javascript---------------------- -->
+<script>
+
+let min = 1,
+    max = 10,
+    winningNum = getRandomNum(min,max),
+    chancesLeft = 3;
+const game = document.querySelector('#game'),
+      minNum = document.querySelector('.min-num'),
+      maxNum = document.querySelector('.max-num'),
+      guessBtn = document.querySelector('#guess-btn'),
+      guessInput = document.querySelector('#guess-input'),
+      message = document.querySelector('.message');
+
+minNum.textContent = min;
+maxNum.textContent = max;
+
+guessBtn.addEventListener('mousedown',function(e){
+  if ( e.target.classList.contains('game-over')){
+    window.location.reload();
+  }
+})
+
+guessBtn.addEventListener('click',function(){
+  let guess = parseInt(guessInput.value);
+  if( isNaN(guess)||guess<min||guess>max ){
+    setMsg(`Please enter a number between ${min} and ${max}`,'red');
+  }
+  else if(guess === winningNum){
+    gameOver(true);
+  } else {
+    chancesLeft--;
+    setMsg(`Wrong Answer.. You have ${chancesLeft} tries left`,'red');
+    if (chancesLeft === 0){
+      gameOver(false);
+      chancesLeft = 3;
+    }
+  }
+  guessInput.value = '';
+
+});
+
+function gameOver(won){
+  guessInput.disabled = true;
+  won ? setMsg(`${winningNum} is the correct guess. YOU WIN!`,'green'):
+   setMsg(`Sorry you have lost the game, the correct answer was ${winningNum}`,'red');
+  guessBtn.value = 'play again';
+  guessBtn.className += 'game-over';
+
+}
+function setMsg(msg,color){
+  message.textContent = msg;
+  message.style.color = color;
+  guessInput.style.borderColor = color;
+}
+function getRandomNum(max,min){
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+</script>
+
+</body>
+</html>
